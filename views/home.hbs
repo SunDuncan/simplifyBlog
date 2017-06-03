@@ -1,0 +1,29 @@
+<div class="hero-unit">
+   <h1>欢迎来到 Duncanblog</h1>
+   <p>Duncanblog 是一个基于 Node.js 的微博系统。</p>
+   <p> <a class="btn btn-primary btn-large" href="/login">登录</a>
+	   <a class="btn btn-large" href="/reg">立即注册</a>
+   </p>
+</div>
+
+<div class="row">
+	
+</div>
+		
+<script id="blogContent" type="text/x-handlebars-temple">
+	\{{#each content}}
+	    <div class="span4">
+		  <h2>\{{author}} 说</h2>
+		  <p>\{{content}}</p>
+		</div>
+	\{{/each}}
+</script>
+
+<script id="personalInfo" type="text/x-handlebars-temple">
+     \{{#each content}}
+          <div class="span4">
+			  <h2> \{{username}} 说</h2>
+			  <p> \{{content}} </p>
+		  </div>
+	 \{{/each}}
+</script>

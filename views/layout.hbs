@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>{{title}}</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="stylesheets/bootstrap.css" />
+	<style type="text/css">
+		body {
+			padding-top: 60px;
+			padding-bottom: 40px;
+		}
+	</style>
+	<link href="stylesheets/bootstrap-responsive.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				<a class="brand" href="/">Duncanblog</a>
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li class="active"><a href="/">首页</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div id="container" class="container">
+			{{{body}}}
+			<hr/> {{> footer}}
+		</div>
+
+		<script src="/js/jquery-2.0.3.min.js"></script>
+		<script src="/js/bootstrap.js"></script>
+		<script src="/asserts/handlebars-v4.0.10.js"></script>
+		<script src="/js/layout.js"></script>
+		{{#each jsList}}
+		<script src={{this}}></script>
+		{{/each}}
+</body>
+
+</html>
+
+ <script id="isLoginNav" type="text/x-handlebars-temple">
+	\{{#if isLogin}}
+	<li><a href="/logout">登出</a></li>
+	\{{else}}
+	<li><a href="/login">登录</a></li>
+	<li><a href="/reg">注册</a></li>
+	\{{/if}}
+</script>
+
+<script id="isLoginInfo" type="text/x-handlebars-temple">
+    \{{#if success}}
+	 <div class="alert alert-success">
+		 \{{success}}
+     </div>
+	 \{{/if}}
+
+	 \{{#if error}}
+        <div class="alert alert-error">
+			\{{error}}
+		</div>
+	 \{{/if}}
+</script>

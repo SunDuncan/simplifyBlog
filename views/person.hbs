@@ -1,0 +1,19 @@
+<form method="post" action="/post" class="well form-inline center" style="text-align: center;">
+	<input type="text" class="span8" name="post" id = "post">
+	<button type="button" class="btn btn-success" id="postInfo"><i class="icon-comment icon-white"> </i> 
+			 	发言</button>
+				 
+</form>
+<div class="row">
+	
+</div>
+
+
+<script id="personalInfo" type="text/x-handlebars-temple">
+     \{{#each content}}
+          <div class="span4">
+			  <h2> \{{username}} 说</h2>
+			  <p> \{{content}} </p>
+		  </div>
+	 \{{/each}}
+</script>
